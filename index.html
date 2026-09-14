@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rana Shabi | Personal Portfolio</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            color: white;
+
+
+            background-image:
+                linear-gradient(rgba(2, 15, 30, 0.88),
+                                rgba(2, 15, 30, 0.94)),
+                url("background.jpg");
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            background-color: #020f1e;
+        }
+
+        nav {
+            width: 100%;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(2, 12, 25, 0.90);
+            border-bottom: 1px solid #123b62;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo span {
+            color: #00aaff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #00aaff;
+        }
+
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            padding: 70px 8%;
+        }
+
+        .hero-text {
+            max-width: 650px;
+        }
+
+        .hero-text small {
+            font-size: 20px;
+            color: #b7dfff;
+        }
+
+        .hero-text h1 {
+            font-size: 60px;
+            line-height: 1.2;
+            margin: 10px 0;
+        }
+
+        .hero-text h1 span {
+            color: #00aaff;
+        }
+
+        .hero-text h2 {
+            font-size: 22px;
+            color: #c8d8e8;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            color: #b9c9d8;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 7px;
+            text-decoration: none;
+            color: white;
+            background: #008fe6;
+            border: 1px solid #008fe6;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: #00aaff;
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: #008fe6;
+            color: white;
+        }
+
+
+        .profile-box {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            padding: 7px;
+            background: #008fe6;
+            box-shadow: 0 0 40px rgba(0, 153, 255, 0.35);
+        }
+
+        .profile-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #06182a;
+        }
+
+
+
+        section {
+            padding: 80px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+        }
+
+        .section-title span {
+            color: #00aaff;
+        }
+
+        .section-title p {
+            color: #9fb4c8;
+            margin-top: 8px;
+        }
+
+
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(5, 25, 45, 0.80);
+            border: 1px solid #124a78;
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #00aaff;
+        }
+
+        .card h3 {
+            color: #00aaff;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #b8c9d8;
+            line-height: 1.8;
+        }
+
+
+        .education {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .education-card h3 {
+            color: white;
+            margin-bottom: 8px;
+        }
+
+        .education-card span {
+            color: #00aaff;
+            font-size: 14px;
+        }
+
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            padding: 12px 22px;
+            background: rgba(5, 35, 62, 0.9);
+            border: 1px solid #12649b;
+            border-radius: 8px;
+            color: #dcefff;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            background: #008fe6;
+            transform: translateY(-4px);
+        }
+
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            background: rgba(4, 25, 44, 0.9);
+            border: 1px solid #124a78;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: #00aaff;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #aebfd0;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .small-btn {
+            padding: 8px 12px;
+            font-size: 12px;
+            border-radius: 5px;
+        }
+
+
+        .experience {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .experience-card {
+            border-left: 3px solid #00aaff;
+            padding-left: 25px;
+        }
+
+        .experience-card h3 {
+            color: #00aaff;
+        }
+
+        .experience-card p {
+            color: #b7c8d7;
+            margin-top: 10px;
+            line-height: 1.8;
+        }
+
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .contact-info p {
+            margin: 18px 0;
+            color: #c3d2df;
+        }
+
+        .contact-info strong {
+            color: #00aaff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #15547f;
+            border-radius: 6px;
+            outline: none;
+            background: #061a2d;
+            color: white;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #00aaff;
+        }
+
+        form button {
+            padding: 13px;
+            border: none;
+            border-radius: 6px;
+            background: #008fe6;
+            color: white;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        form button:hover {
+            background: #0078c2;
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            border-top: 1px solid #123b62;
+            background: rgba(2, 12, 25, 0.9);
+            color: #8ea5b8;
+        }
+
+        footer span {
+            color: #00aaff;
+        }
+
+
+        @media (max-width: 1000px) {
+
+            .projects {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            .profile-box {
+                width: 240px;
+                height: 240px;
+            }
+
+            .projects,
+            .education {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <nav>
+        <div class="logo">
+            &lt;/&gt; <span>Rana</span> Shabi
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <small>Hi, I'm</small>
+
+            <h1>
+                Rana <span>Shabi</span>
+            </h1>
+
+            <h2>
+                Web Developer | Programmer | Student
+            </h2>
+
+            <p>
+                I'm a passionate web developer learning modern
+                technologies and building creative web projects.
+                I love turning ideas into useful websites.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn">
+                    View My Projects
+                </a>
+
+                <a href="Shabi CV.docx" class="btn btn-outline" target="_blank">
+                    Download CV
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="profile-box">
+
+            <img src="profile.jpg" alt="Rana Shabi">
+
+        </div>
+
+    </section>
+
+
+
+    <section id="about">
+
+        <div class="section-title">
+            <h2>About <span>Me</span></h2>
+            <p>Know more about me</p>
+        </div>
+
+        <div class="about-container">
+
+            <div class="card">
+
+                <h3>Who I Am</h3>
+
+                <p>
+                    I am a BSc student and an aspiring web developer.
+                    I enjoy learning programming, creating websites
+                    and improving my technical skills.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>My Goal</h3>
+
+                <p>
+                    My goal is to become a skilled professional
+                    developer and build modern, responsive and
+                    useful websites and applications.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="education">
+
+        <div class="section-title">
+            <h2>My <span>Education</span></h2>
+            <p>My academic journey</p>
+        </div>
+
+        <div class="education">
+
+            <div class="card education-card">
+
+                <h3>BS Software Engineering</h3>
+
+                <span>
+                    Islamia University Bahawalpur (IUB)
+                </span>
+
+                <p>
+                    Currently studying
+                </p>
+
+            </div>
+
+
+            <div class="card education-card">
+
+                <h3>Inter (ICS)</h3>
+
+                <span>
+                    Intermediate Education
+                </span>
+
+                <p>
+                    Completed
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="skills">
+
+        <div class="section-title">
+            <h2>My <span>Skills</span></h2>
+            <p>Technologies I am learning</p>
+        </div>
+
+        <div class="skills">
+
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">Java</div>
+            <div class="skill">C++</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">VS Code</div>
+            <div class="skill">Responsive Design</div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="projects">
+
+        <div class="section-title">
+            <h2>My <span>Projects</span></h2>
+            <p>Some of my work</p>
+        </div>
+
+
+        <div class="projects">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <img src="project1.jpg" alt="Personal Website">
+
+                <div class="project-content">
+
+                    <h3>Personal Website</h3>
+
+                    <p>
+                        A responsive personal portfolio website
+                        created using HTML, CSS and JavaScript.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="index.html"
+                           class="btn small-btn">
+                            View Project
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="project-card">
+
+                <img src="project2.jpg" alt="Login Page">
+
+                <div class="project-content">
+
+                    <h3>Login Page</h3>
+
+                    <p>
+                        A modern login page with JavaScript
+                        form validation.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="login.html"
+                           class="btn small-btn">
+                            View Project
+                        </a>
+
+                       
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="project-card">
+
+                <img src="project3.jpg" alt="Weather App">
+
+                <div class="project-content">
+
+                    <h3>Expense Tracker</h3>
+
+                    <p>
+                        A Expanse tracker application displaying
+                        Expnse information.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="expense.html"
+                           class="btn small-btn">
+                            View Project
+                        </a>
+
+                       
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="project-card">
+
+                <img src="project4.jpg" alt="Bouncing Ball Game">
+
+                <div class="project-content">
+
+                    <h3>Calculator Web</h3>
+
+                    <p>
+                        A simple interactive calculator where you can perform
+                        different calculations.
+                    </p>
+
+                    <div class="project-buttons">
+
+                        <a href="cal.html"
+                           class="btn small-btn">
+                            View Project
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="experience">
+
+        <div class="section-title">
+            <h2>My <span>Experience</span></h2>
+        </div>
+
+        <div class="experience">
+
+            <div class="card experience-card">
+
+                <h3>Student & Web Developer</h3>
+
+                <p>
+                    Currently learning web development and
+                    programming. Working on personal projects
+                    and improving HTML, CSS and JavaScript skills.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="contact">
+
+        <div class="section-title">
+            <h2>Contact <span>Me</span></h2>
+            <p>Let's connect</p>
+        </div>
+
+
+        <div class="contact-container">
+
+
+            <div class="card contact-info">
+
+                <h3>Get In Touch</h3>
+
+                <p>
+                    <strong>Email:</strong>
+                    shabirana49@gmail.com
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    +92 303 2561677
+                </p>
+
+                <p>
+                    <strong>Location:</strong>
+                    Bahawalpur, Pakistan
+                </p>
+
+                <p>
+                    <strong>GitHub:</strong>
+                    github.com/shaeehulhussain
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <form id="contactForm">
+
+                    <input
+                        type="text"
+                        placeholder="Your Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        placeholder="Your Email"
+                        required
+                    >
+
+                    <textarea
+                        placeholder="Your Message"
+                        required
+                    ></textarea>
+
+                    <button type="submit">
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 <span>Rana Shabi</span>.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const form = document.getElementById("contactForm");
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            alert("Thank you! Your message has been submitted.");
+
+            form.reset();
+
+        });
+
+    </script>
+
+</body>
+</html>
